@@ -1,3 +1,71 @@
+<!-- CSS Style -->
+<style>
+.back-to-top {
+  color:white; 
+  background-color:#14b8a6; 
+  padding: 2px 8px; 
+  border-radius: 100px;
+  text-decoration: none;
+  height: fit-content;
+  align-self: center;
+  transition: 0.1s;
+}
+
+.back-to-top:hover {
+  background: #02d1ba;
+  text-decoration: none;
+}
+
+.back-to-top:active {
+  background: #0a665b;
+  text-decoration: none;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  background: #23252e;
+  border-radius: 12px;
+  padding: 4px;
+  width: 310px;
+  border: 2px solid #14b8a6;
+}
+
+.table h2 {
+  margin: auto;
+}
+
+.table a {
+  display: block;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.table a:hover{
+  background: gray;
+  transition: 0.3s;
+  text-decoration: none;
+  border-radius: 100px;
+  margin:0px;
+  padding: 0 10px;
+}
+
+.horizontal-line {
+  width: 95%;
+  background-color: gray;
+  height: 2px;
+  margin: auto;
+  border-radius: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+</style>
+
 <!-- Content Start -->
 # About this repo
 This file is made for Fedora 35, 36, 37 
@@ -5,13 +73,16 @@ C31
 
 **30 April 2022**
 
-***
+*** 
 
-## Table of Content
-[List of useful website](#list-of-useful-website)  
-[Optimus Nvidia Stuff](#optimus-nvidia)  
-[Linux Battery Saver](#linux-battery-saver)  
-[Miscellaneous](#miscellaneous)  
+<div class="table">
+  <h2>Table of content</h2>
+  <div class="horizontal-line"></div>
+  <a href="#list-of-useful-website">List of useful website</a>
+  <a href="#optimus-nvidia">Optimus Nvidia Stuff</a>
+  <a href="#linux-battery-saver">Linux Battery Saver</a>
+  <a href="#miscellaneous">Miscellaneous</a>
+</div>
 
 ***
 
