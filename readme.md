@@ -10,14 +10,14 @@ Last Edit: **29 May 2023**
 ***
 
 ## Table of Content
-[Gnome Extensions Used](#gnome-extensions-used)  
-[List of useful website](#list-of-useful-website)  
-[Optimus Nvidia Stuff](#nvidia-optimus-stuff)  
-[Linux Battery Saver](#linux-battery-saver)   
-[Android on Linux](#android-on-linux)    
-[Random Small Fix](#random-small-fix)    
-[Wayland Stuff](#wayland-stuff)   
-[Miscellaneous](#miscellaneous)    
+> 1 [Gnome Extensions Used](#gnome-extensions-used)  
+> 2 [List of useful website](#list-of-useful-website)  
+> 3 [Optimus Nvidia Stuff](#nvidia-optimus-stuff)  
+> 4 [Linux Battery Saver](#linux-battery-saver)   
+> 5 [Android on Linux](#android-on-linux)    
+> 6 [Random Small Fix](#random-small-fix)    
+> 7 [Wayland Stuff](#wayland-stuff)   
+> 8 [Miscellaneous](#miscellaneous)    
 
 ***
 # Gnome Extensions Used
@@ -160,7 +160,7 @@ Step by Step
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
 
-https://docs.waydro.id/debugging/troubleshooting
+https://docs.waydro.id/debugging/troubleshooting   
 https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/
 
 ## To restart Waydroid, go to Terminal
@@ -190,7 +190,7 @@ Note: Didn't work, see above ## How to install
 </p>
 
 ## Wifi keep dropping
-1. Solution: Disable Wifi Power saving
+1. Solution: Disable Wifi Power saving   
 https://linrunner.de/tlp/settings/network.html
 
 > $ sudo nano /etc/tlp.conf  
@@ -202,7 +202,7 @@ WIFI_PWR_ON_BAT=off
 2. Solution 2: Disable Bluetooth
 
 ## Zoom 5.10.4 (2845) Crashing on F36
-This is related to the GPU sanbox I think
+This is related to the GPU sanbox I think   
 https://community.zoom.com/t5/Meetings/Version-5-10-0-crashing-at-startup-on-Fedora-35/td-p/51487
 
 This command to disable GPU sanboxing on Zoom works
