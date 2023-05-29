@@ -63,13 +63,11 @@ gt => TunnelDPI
 nm-connection-editor => Connection Settings   
 dconf-editor => A graphical viewer and editor of applications’ internal settings   
 
-<br>
-
-# Nvidia Optimus Stuff
-
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
+
+# Nvidia Optimus Stuff
 
 ## NVIDIA PrimaryGPU Support 
 > https://rpmfusion.org/Howto/Optimus 
@@ -121,13 +119,11 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ./osu.AppImage
 ## Configuration on Hybrid Nvidia + Intel IGP
 https://download.nvidia.com/XFree86/Linux-x86_64/510.68.02/README/randr14.html
 
-<br>
-
-# Linux Laptop Battery Saver
-
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
+
+# Linux Laptop Battery Saver
 
 ## Using TLC to saving battery on laptop
 > https://linrunner.de/tlp/installation/fedora.html
@@ -154,11 +150,11 @@ Step by Step
 > \$ systemctl disable tlp.service  
 > \$ systemctl unmask systemd-rfkill.service systemd-rfkill.socket  
 
-# Android on Linux
-
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
+
+# Android on Linux
 
 https://docs.waydro.id/debugging/troubleshooting   
 https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/
@@ -177,17 +173,17 @@ https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/
 > $ sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
 
 3. Initialise 
-> $ waydroid init -f or # waydroid init -f -i /usr/share/waydroid-extra/images
+> $ waydroid init -f or # waydroid init -f -i /usr/share/waydroid-extra/images  
 Note: Didn't work, see above ## How to install
 
 4. Start the service again 
 > $ systemctl start waydroid-container.service
 
-# Random Small Fix
-
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
+
+# Random Small Fix
 
 ## Wifi keep dropping
 1. Solution: Disable Wifi Power saving   
@@ -208,11 +204,11 @@ https://community.zoom.com/t5/Meetings/Version-5-10-0-crashing-at-startup-on-Fed
 This command to disable GPU sanboxing on Zoom works
 > $ zoom --disable-gpu-sandbox
 
-# Wayland Stuff
-
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
+
+# Wayland Stuff
 
 ## Wayland Bug
 Diagonal split rendering bug / 1 frame lag rendering when FPS below 60
@@ -262,12 +258,11 @@ https://github.com/Genymobile/scrcpy/issues/3431
 
 <br>
 
-# Miscellaneous
-
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
 
+# Miscellaneous
 
 ##  Pressing CTRL+. (Period) will show `e` in underscore
 This is shortcut to Emoji Annotation. you can disabled it by going in terminal
