@@ -8,6 +8,7 @@ Last Edit: **29 May 2023**
 ***
 
 ## Table of Content
+[Gnome Extensions Used](#gnome-extensions-used)
 [List of useful website](#list-of-useful-website)  
 [Optimus Nvidia Stuff](#nvidia-optimus-stuff)  
 [Linux Battery Saver](#linux-battery-saver)   
@@ -18,13 +19,26 @@ Last Edit: **29 May 2023**
 
 ***
 
+# Gnome Extensions Used
+- Blur My Shell | [GitHub](https://github.com/aunetx/blur-my-shell)
+- Burn My Windows | [GitHub](https://github.com/Schneegans/Burn-My-Windows)
+- Current screen only in windows switcher | [GitHub](https://github.com/mmai/Current_screen_only_on_window_switcher)
+- Dash to Panel | [GitHub](https://github.com/home-sweet-gnome/dash-to-panel)
+- Desktop Clock | [GitLab](https://gitlab.com/AndrewZaech/azclock)
+- Gnome 4x UI Improvements [GitHub](https://github.com/axxapy/gnome-ui-tune)
+- gTile | [GitHub](https://github.com/gTile/gTile)
+- Internet Speed Monitor | [GitHub](https://github.com/rishuinfinity/InternetSpeedMonitor)
+
+<br>
+
 # List of useful website
+- https://linrunner.de/tlp/installation/fedora.html
 - https://rpmfusion.org/Howto/Optimus
 - https://www.markdownguide.org/basic-syntax/
-- https://linrunner.de/tlp/installation/fedora.html
-- http://wiki.get-good.net/index.php?title=RFactor_Skinning
 - https://www.markdownguide.org/cheat-sheet/
+- http://wiki.get-good.net/index.php?title=RFactor_Skinning
 
+<br>
 
 # Add things to PATH
 1. Open up Terminal
