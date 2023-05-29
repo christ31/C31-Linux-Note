@@ -1,17 +1,20 @@
 <!-- Content Start -->
 # About this repo
-This file is made for Fedora 35, 36, 37 
+This file is made for Fedora 35, 36, 37, 38
 C31
 
-**30 April 2022**
+Last Edit: **29 May 2023**
 
 ***
 
 ## Table of Content
 [List of useful website](#list-of-useful-website)  
-[Optimus Nvidia Stuff](#optimus-nvidia)  
-[Linux Battery Saver](#linux-battery-saver)  
-[Miscellaneous](#miscellaneous)  
+[Optimus Nvidia Stuff](#nvidia-optimus-stuff)  
+[Linux Battery Saver](#linux-battery-saver)   
+[Android on Linux](#android-on-linux)    
+[Random Small Fix](#random-small-fix)    
+[Wayland Stuff](#wayland-stuff)   
+[Miscellaneous](#miscellaneous)    
 
 ***
 
@@ -34,23 +37,22 @@ C31
 > $ source .bashrc
 
 4. Validate using 'which [programs]'
-> $ which flutter
+> $ which flutter   
 > /Home/flutter/bin/flutter 
 
+<br>
 
 # Useful Tools
-1. nethogs => Network Monitor
-2. gt => TunnelDPI
+nethogs => Network Monitor   
+gt => TunnelDPI   
+nm-connection-editor => Connection Settings   
+dconf-editor => A graphical viewer and editor of applications’ internal settings   
 
-<div 
-style="display: flex; 
-  justify-content: space-between;
-  height: fit-content">
-  <h1 id="optimus-nvidia" style="margin:0; border-bottom: 0">Optimus Nvidia Stuff</h1>
-  <a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
-</div>
+<br>
 
-***
+# Nvidia Optimus Stuff
+<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
 ## NVIDIA PrimaryGPU Support 
 > https://rpmfusion.org/Howto/Optimus 
 
@@ -63,7 +65,7 @@ And edit the file to use:
 
 /!\ SSDM and lightdm display manager users: Please Have a look at the ArchLinux wiki about configuring display manager. In Fedora, Gnome users don't need this change.
 
-***
+<br>
 
 ## Finer-Grained Control of GLX + OpenGL 
 > https://rpmfusion.org/Howto/Optimus  
@@ -74,7 +76,7 @@ Examples:
 > __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxgears  
 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0   __GLX_VENDOR_LIBRARY_NAME=nvidia glxgears  
 
-***
+<br>
 
 ## Finer-Grained Control of Vulkan
 > https://rpmfusion.org/Howto/Optimus
@@ -85,7 +87,7 @@ Examples:
 
 > __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only vkcube
 
-***
+<br>
 
 ## Configure Graphics Applications to Render Using the GPU Screen
 To configure a graphics application to be offloaded to the NVIDIA GPU screen, set the environment variable `NV_PRIME_RENDER_OFFLOAD` to 1. If the graphics application uses Vulkan, that should be all that is needed. If the graphics application uses GLX, then also set the environment variable `GLX_VENDOR_LIBRARY_NAME` to nvidia, so that GLVND loads the NVIDIA GLX driver. NVIDIA's EGL implementation does not yet support PRIME render offload.
@@ -96,22 +98,15 @@ Examples:
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep vendor
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ./osu.AppImage 
 
-***
+<br>
 
 ## Configuration on Hybrid Nvidia + Intel IGP
 https://download.nvidia.com/XFree86/Linux-x86_64/510.68.02/README/randr14.html
 
 <br>
-<div 
-style="display: flex; 
-  justify-content: space-between;
-  height: fit-content">
-  <h1 id="linux-battery-saver"
-  style="margin:0; border-bottom: 0">Linux Laptop Battery Saver</h1>
-  <a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
-</div>
 
-***
+# Linux Laptop Battery Saver
+<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
 
 ## Using TLC to saving battery on laptop
 > https://linrunner.de/tlp/installation/fedora.html
@@ -138,21 +133,213 @@ Step by Step
 > \$ systemctl disable tlp.service  
 > \$ systemctl unmask systemd-rfkill.service systemd-rfkill.socket  
 
-<br>
-<div 
-style="display: flex; 
-  justify-content: space-between;
-  height: fit-content">
-  <h1 id="miscellaneous"
-  style="margin:0; border-bottom: 0">Miscellaneous</h1>
-  <a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
-</div>
+# Android on Linux
+<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
 
-***
+https://docs.waydro.id/debugging/troubleshooting
+https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/
+
+## To restart Waydroid, go to Terminal
+> $ sudo waydroid container restart
+
+## How to install
+> $ sudo waydroid init -c https://ota.waydro.id/system -v https://ota.waydro.id/vendor -s GAPPS
+
+## How to reset Waydroid
+1. Stop the waydroid-container.service  
+> $ systemctl stop waydroid-container.service
+
+2. Cleanup 
+> $ sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
+
+3. Initialise 
+> $ waydroid init -f or # waydroid init -f -i /usr/share/waydroid-extra/images
+Note: Didn't work, see above ## How to install
+
+4. Start the service again 
+> $ systemctl start waydroid-container.service
+
+# Random Small Fix
+<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+## Wifi keep dropping
+1. Solution: Disable Wifi Power saving
+https://linrunner.de/tlp/settings/network.html
+
+> $ sudo nano /etc/tlp.conf  
+WIFI_PWR_ON_AC=off      
+WIFI_PWR_ON_BAT=off    
+>
+> $ sudo tlp start   
+
+2. Solution 2: Disable Bluetooth
+
+## Zoom 5.10.4 (2845) Crashing on F36
+This is related to the GPU sanbox I think
+https://community.zoom.com/t5/Meetings/Version-5-10-0-crashing-at-startup-on-Fedora-35/td-p/51487
+
+This command to disable GPU sanboxing on Zoom works
+> $ zoom --disable-gpu-sandbox
+
+# Wayland Stuff
+<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+
+## Wayland Bug
+Diagonal split rendering bug / 1 frame lag rendering when FPS below 60
+
+https://www.reddit.com/r/linux_gaming/comments/swljmt/diagonal_tear_line_in_wayland/
+https://gitlab.gnome.org/GNOME/mutter/-/issues/2151
+https://gitlab.freedesktop.org/xorg/xserver/-/issues/1317
+https://github.com/NVIDIA/open-gpu-kernel-modules/issues/187
+
+<br>
+
+## Force Disable VSYNC
+https://dri.freedesktop.org/wiki/ConfigurationOptions/
+
+> $ vblank_mode=0 ./osu.AppImage    
+
+<br>
+
+## Restarting Gnome-Shell in Wayland
+https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/5634
+
+All apps will crash
+
+1. Go to TTY
+Use Ctrl + Alt + F2 or Ctrl + Alt + F3
+
+2. Stop GDM 
+> sudo systemctl stop gdm
+
+3. Start GDM
+> sudo systemctl start gdm
+
+<br>
+
+## Using X11 Backend in Wayland
+in Terminal, do
+> $ GDK_BACKEND=x11 ./[programs]
+
+<br>
+
+## Scrcpy window doesn't show up in Fedora 36 Wayland
+https://github.com/Genymobile/scrcpy/issues/3431
+
+> $ SDL_VIDEODRIVER=x11 scrcpy   
+>
+> $ SDL_VIDEODRIVER=x11 scrcpy -b 2M --max-fps=15
+
+<br>
+
+# Miscellaneous
+<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
 
 ##  Pressing CTRL+. (Period) will show `e` in underscore
 This is shortcut to Emoji Annotation. you can disabled it by going in terminal
 >$ ibus-setup
 
 IBus Preferences will show up, go to Emoji Tab, delete Emoji annotation
+
+<br>
+
+## Deskreen
+Add this parameter to enable PipeWireCapture in wayland session
+./Deskreen-1.0.12.AppImage --enable-features=WebRTCPipeWireCapturer
+
+<br>
+
+## Cleaning up logs/journal
+https://www.linuxuprising.com/2019/10/how-to-clean-up-systemd-journal-logs.html
+
+One time usage
+> $ sudo journalctl --rotate   
+>
+> $ sudo journalctl --vacuum-time=1s
+
+Configuration location
+>$ nano /etc/systemd/journald.conf
+
+<br>
+
+## MangoHud OpenGL Fix
+OpenGL games may also need dlsym hooking. Add `--dlsym` or `MANGOHUD_DLSYM=1` env var to your command like `mangohud --dlsym %command%` for Steam.
+
+<br>
+
+## Video Download Location
+Change the download location
+
+> $ flatpak run --command=gsettings com.github.unrud.VideoDownloader set com.github.unrud.VideoDownloader download-folder '/mnt/LinuxData/Download'
+
+<br>
+
+## Convert WEBM to MP4 using FFMPEG
+> $ ffmpeg -i input_filename.WebM output_filename.MP4
+
+<br>
+
+## Steam (Controller Missmatch Button)
+https://steamcommunity.com/discussions/forum/1/1621726179577658947/#c1697175413682520103
+
+I found a fix today after looking for weeks. Hopefully it works for you as well.
+
+- Disable all Controller Support Options (IE PS4 Support etc)
+- Exit Steam and unplug the controller
+- Open the config.vdf file stored on your computer
+- By default it is located in `C:\Program Files (x86)\Steam\config\config.vdf`
+- Search for "SDL_GamepadBind" and delete everything underneath it
+- Save the file
+- Start Steam and plug in the controller
+
+<br>
+
+## When using VSCode to publish new Repo to Github, it will default to master
+Change the Git Config in the system
+> $ git config --global init.defaultBranch main
+
+<br>
+
+## Shared Linux Folder in Windows Guest (QEMU/KVM)
+https://virtio-fs.gitlab.io/howto-windows.html
+
+1. Setup the KVM 
+- Enable shared memory
+- Add FileSystem shared
+
+2. Setup on the Windows Guest
+- Install WinFsp
+- Download virtiofs ISO (https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md)
+- Open ISO, and copy virtiofs folder
+- Run virtio-win-guest-tools.exe
+- Starting the virtiofs service so the disk will be mounted starting with Z:\ 
+sc create VirtioFsSvc binpath="C:\virtiofs\virtiofs.exe" start=auto depend="WinFsp.Launcher/			VirtioFsDrv" DisplayName="Virtio FS Service" 
+
+<br>
+
+## N-Key Rollover Problem in Linux
+
+https://unix.stackexchange.com/questions/675933/keyboard-input-n-key-rollover
+
+> $ cat /proc/bus/input/devices 
+
+That file format is explained well here => https://unix.stackexchange.com/a/74907/499581   
+and here => https://unix.stackexchange.com/a/94329/508931
+
+
+In the HyperX case, there are five different handlers available (can be more/less in others):
+
+handler for keyboard events, standard mode
+mouse handler (e.g. remote USB keyboard witch touchpad). I'm assuming it is always there by design
+just by referring to its name "System Control", it provides events for power, sleep, etc.
+referring to "Consumer Control", it provides events for multimedia and related special keys
+handler for NKRO events
+I can find the "standard mode" keyboard handler easily by looking for EV=120013 (I'm not sure if it is a proper way either). In that particular case I could look for other entries with an identical bitmap of supported keys, but unfortunately in Havit case that bitmap is pretty different. Another pattern that I see and might be useful is to look for sysrq in handlers, However, I don't know what it means.
+
+And that's it.
+
+How can I properly find both standard mode and NKRO handlers for given keyboard?
+
+https://www.devever.net/~hl/usbnkro
 
