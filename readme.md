@@ -1,11 +1,3 @@
-<style>
-a{
-  text-align: center;
-  margin: auto;
-}
-
-</style>
-
 <!-- Content Start -->
 # About this repo
 Tips, problem, and a lot of things when using Linux
