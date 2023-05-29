@@ -1,5 +1,15 @@
+<style>
+a{
+  text-align: center;
+  margin: auto;
+}
+
+</style>
+
 <!-- Content Start -->
 # About this repo
+Tips, problem, and a lot of things when using Linux
+
 This file is made for Fedora 35, 36, 37, 38
 C31
 
@@ -8,7 +18,7 @@ Last Edit: **29 May 2023**
 ***
 
 ## Table of Content
-[Gnome Extensions Used](#gnome-extensions-used)
+[Gnome Extensions Used](#gnome-extensions-used)  
 [List of useful website](#list-of-useful-website)  
 [Optimus Nvidia Stuff](#nvidia-optimus-stuff)  
 [Linux Battery Saver](#linux-battery-saver)   
@@ -18,7 +28,6 @@ Last Edit: **29 May 2023**
 [Miscellaneous](#miscellaneous)    
 
 ***
-
 # Gnome Extensions Used
 - Blur My Shell | [GitHub](https://github.com/aunetx/blur-my-shell)
 - Burn My Windows | [GitHub](https://github.com/Schneegans/Burn-My-Windows)
@@ -65,7 +74,10 @@ dconf-editor => A graphical viewer and editor of applications’ internal settin
 <br>
 
 # Nvidia Optimus Stuff
-<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
 
 ## NVIDIA PrimaryGPU Support 
 > https://rpmfusion.org/Howto/Optimus 
@@ -120,7 +132,10 @@ https://download.nvidia.com/XFree86/Linux-x86_64/510.68.02/README/randr14.html
 <br>
 
 # Linux Laptop Battery Saver
-<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
 
 ## Using TLC to saving battery on laptop
 > https://linrunner.de/tlp/installation/fedora.html
@@ -148,7 +163,10 @@ Step by Step
 > \$ systemctl unmask systemd-rfkill.service systemd-rfkill.socket  
 
 # Android on Linux
-<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
 
 https://docs.waydro.id/debugging/troubleshooting
 https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/
@@ -174,7 +192,10 @@ Note: Didn't work, see above ## How to install
 > $ systemctl start waydroid-container.service
 
 # Random Small Fix
-<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
 
 ## Wifi keep dropping
 1. Solution: Disable Wifi Power saving
@@ -196,8 +217,10 @@ This command to disable GPU sanboxing on Zoom works
 > $ zoom --disable-gpu-sandbox
 
 # Wayland Stuff
-<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
 
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
 
 ## Wayland Bug
 Diagonal split rendering bug / 1 frame lag rendering when FPS below 60
@@ -248,7 +271,11 @@ https://github.com/Genymobile/scrcpy/issues/3431
 <br>
 
 # Miscellaneous
-<a class="back-to-top" href="#about-this-repo">🔼 Back to top 🔼</a>
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
+
 
 ##  Pressing CTRL+. (Period) will show `e` in underscore
 This is shortcut to Emoji Annotation. you can disabled it by going in terminal
@@ -357,3 +384,7 @@ How can I properly find both standard mode and NKRO handlers for given keyboard?
 
 https://www.devever.net/~hl/usbnkro
 
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
