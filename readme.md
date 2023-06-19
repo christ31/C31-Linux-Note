@@ -2,10 +2,10 @@
 # About this repo
 Tips, problem, and a lot of things when using Linux
 
-This file is made for Fedora 35, 36, 37, 38
+This file is made for Fedora 35, 36, 37, 38   
 C31
 
-Last Edit: **29 May 2023**
+Last Edit: **19 June 2023**
 
 ***
 
