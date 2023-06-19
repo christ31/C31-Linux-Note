@@ -15,8 +15,8 @@ Last Edit: **29 May 2023**
 > 3 [Optimus Nvidia Stuff](#nvidia-optimus-stuff)  
 > 4 [Linux Battery Saver](#linux-battery-saver)   
 > 5 [Android on Linux](#android-on-linux)    
-> 6 [Random Small Fix](#random-small-fix)    
-> 7 [Wayland Stuff](#wayland-stuff)   
+> 6 [Wayland Stuff](#wayland-stuff)   
+> 7 [Random Small Fix](#random-small-fix)    
 > 8 [Miscellaneous](#miscellaneous)    
 
 ***
@@ -183,34 +183,22 @@ Note: Didn't work, see above ## How to install
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
 
-# Random Small Fix
-
-## Wifi keep dropping
-1. Solution: Disable Wifi Power saving   
-https://linrunner.de/tlp/settings/network.html
-
-> $ sudo nano /etc/tlp.conf  
-WIFI_PWR_ON_AC=off      
-WIFI_PWR_ON_BAT=off    
->
-> $ sudo tlp start   
-
-2. Solution 2: Disable Bluetooth
-
-## Zoom 5.10.4 (2845) Crashing on F36
-This is related to the GPU sanbox I think   
-https://community.zoom.com/t5/Meetings/Version-5-10-0-crashing-at-startup-on-Fedora-35/td-p/51487
-
-This command to disable GPU sanboxing on Zoom works
-> $ zoom --disable-gpu-sandbox
-
+# Wayland Stuff
 <p align="center">
-<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+  Table of Content
 </p>
 
-# Wayland Stuff
+> 1 [Diagonal Split Rendering](#wayland-bug)  
+> 2 [Force Disable VSYNC](#force-disable-vsync)  
+> 3 [Restarting Gnome-Shell in Wayland](#restarting-gnome-shell-in-wayland)  
+> 4 [Using X11 Backend in Wayland](#using-x11-backend-in-wayland)   
+> 5 [Scrcpy window doesn't show up in Fedora 36 Wayland](#scrcpy-window-doesnt-show-up-in-fedora-36-wayland)  
+> 6 [(Unfixed) Wayland screen sharing on Chrome in Google Meet crash the browser](#unfixed-wayland-screen-sharing-on-chrome-in-google-meet-crash-the-browser)    
+> 7 [Deskreen Black Screen in Wayland](#deskreen-black-screen-in-wayland)
 
-## Wayland Bug
+<br>
+
+## Diagonal Split Rendering
 Diagonal split rendering bug / 1 frame lag rendering when FPS below 60
 
 https://www.reddit.com/r/linux_gaming/comments/swljmt/diagonal_tear_line_in_wayland/
@@ -258,23 +246,81 @@ https://github.com/Genymobile/scrcpy/issues/3431
 
 <br>
 
+## (Unfixed) Wayland screen sharing on Chrome in Google Meet crash the browser
+**Affects:** Entire Screen, A Window  
+**Version:** Version 114.0.5735.133 (Official Build) (64-bit)  
+
+**My Fix:**  
+Just launch in Terminal
+> $ google-chrome-stable
+
+**Suggested Solutions:**  
+type in address bar  
+> chrome://flags/#enable-webrtc-pipewire-capturer  
+
+WebRTC PipeWire support > Enable
+
+Note: Weirdly, this doesn't happen with Chromium and Firefox
+
+<br>
+
+## Deskreen Black Screen in Wayland
+Add this parameter to enable PipeWireCapture in wayland session
+> $ ./Deskreen-1.0.12.AppImage --enable-features=WebRTCPipeWireCapturer
+
+
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
 
-# Miscellaneous
+
+# Random Small Fix
+<p align="center">
+  Table of Content
+</p>
+
+> 1 [Wifi keep disconnecting](#wifi-keep-disconnecting)  
+> 2 [Zoom 5.10.4 (2845) Crashing on F36](#zoom-5104-2845-crashing-on-f36)  
+> 3 [Pressing CTRL+. (Period) will show `e` in underscore](#pressing-ctrl-period-will-show-e-in-underscore)  
+> 4 [Cleaning up logs/journal](#cleaning-up-logsjournal)   
+> 5 [MangoHud OpenGL Fix](#mangohud-opengl-fix)    
+> 6 [Video Downloader Change Download Location](#video-downloader-change-download-location)   
+> 7 [Convert WEBM to MP4 using FFMPEG](#convert-webm-to-mp4-using-ffmpeg)   
+> 8 [Steam (Controller Missmatch Button)](#steam-controller-missmatch-button)    
+> 7 [Publish New Repo on VSCode default to master](#when-using-vscode-to-publish-new-repo-to-github-it-will-default-to-master)    
+> 9 [Shared Linux Folder in Windows Guest (QEMU/KVM)](#shared-linux-folder-in-windows-guest-qemukvm)    
+> 10 [N-Key Rollover Problem in Linux](#n-key-rollover-problem-in-linux)    
+> 11 [Disable Gnome Screenshot Sound when taking screenshot](#disable-gnome-screenshot-sound-when-taking-screenshot)  
+> 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
+
+<br>
+
+## Wifi keep disconnecting
+1. Solution: Disable Wifi Power saving   
+https://linrunner.de/tlp/settings/network.html
+
+> $ sudo nano /etc/tlp.conf  
+WIFI_PWR_ON_AC=off      
+WIFI_PWR_ON_BAT=off    
+>
+> $ sudo tlp start   
+
+2. Solution 2: Disable Bluetooth
+
+## Zoom 5.10.4 (2845) Crashing on F36
+This is related to the GPU sanbox I think   
+https://community.zoom.com/t5/Meetings/Version-5-10-0-crashing-at-startup-on-Fedora-35/td-p/51487
+
+This command to disable GPU sanboxing on Zoom works
+> $ zoom --disable-gpu-sandbox
+
+<br>
 
 ##  Pressing CTRL+. (Period) will show `e` in underscore
 This is shortcut to Emoji Annotation. you can disabled it by going in terminal
 >$ ibus-setup
 
 IBus Preferences will show up, go to Emoji Tab, delete Emoji annotation
-
-<br>
-
-## Deskreen
-Add this parameter to enable PipeWireCapture in wayland session
-./Deskreen-1.0.12.AppImage --enable-features=WebRTCPipeWireCapturer
 
 <br>
 
@@ -296,7 +342,7 @@ OpenGL games may also need dlsym hooking. Add `--dlsym` or `MANGOHUD_DLSYM=1` en
 
 <br>
 
-## Video Download Location
+## Video Downloader Change Download Location
 Change the download location
 
 > $ flatpak run --command=gsettings com.github.unrud.VideoDownloader set com.github.unrud.VideoDownloader download-folder '/mnt/LinuxData/Download'
@@ -323,7 +369,7 @@ I found a fix today after looking for weeks. Hopefully it works for you as well.
 
 <br>
 
-## When using VSCode to publish new Repo to Github, it will default to master
+## Publish New Repo on VSCode default to master
 Change the Git Config in the system
 > $ git config --global init.defaultBranch main
 
@@ -370,6 +416,28 @@ And that's it.
 How can I properly find both standard mode and NKRO handlers for given keyboard?
 
 https://www.devever.net/~hl/usbnkro
+
+<br>
+
+## Disable Gnome Screenshot Sound when taking screenshot 
+https://forum.manjaro.org/t/disable-gnome-screenshot-sound/13513/2
+
+PATH: 
+/usr/share/sounds/freedesktop/stereo
+
+Just rename camera-shutter.oga to camera-shutter.bak (can be anything other than '.oga')
+
+<br>
+
+## Realme 6 cannot connect to Gnome Android Hotspot
+https://askubuntu.com/questions/1424633/unable-to-connect-with-the-hotspot-created-on-ubuntu
+
+What got things working for me was the disablement of Protected Management Frames
+
+type in CMD  
+> $ nmcli c modify Hotspot 802-11-wireless-security.pmf 1 
+
+<br>
 
 
 <p align="center">
