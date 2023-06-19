@@ -387,9 +387,9 @@ https://virtio-fs.gitlab.io/howto-windows.html
 - Download virtiofs ISO (https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md)
 - Open ISO, and copy virtiofs folder
 - Run virtio-win-guest-tools.exe
-- Starting the virtiofs service so the disk will be mounted starting with Z:\ 
-
+- Starting the virtiofs service (Run as Admin) so the disk will be mounted starting with Z:\   
 > sc create VirtioFsSvc binpath="C:\virtiofs\virtiofs.exe" start=auto depend="WinFsp.Launcher/			VirtioFsDrv" DisplayName="Virtio FS Service" 
+- 
 
 <br>
 
