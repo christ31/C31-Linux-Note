@@ -292,6 +292,7 @@ Add this parameter to enable PipeWireCapture in wayland session
 > 10 [N-Key Rollover Problem in Linux](#n-key-rollover-problem-in-linux)    
 > 11 [Disable Gnome Screenshot Sound when taking screenshot](#disable-gnome-screenshot-sound-when-taking-screenshot)  
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
+> 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
 
 <br>
 
@@ -439,6 +440,11 @@ type in CMD
 
 <br>
 
+## Exclude a certain package when running dnf update
+Use --exclude parameter
+> $ dnf update --exclude=package_name*
+
+<br>
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
