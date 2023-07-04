@@ -5,7 +5,7 @@ Tips, problem, and a lot of things when using Linux
 This file is made for Fedora 35, 36, 37, 38   
 C31
 
-Last Edit: **19 June 2023**
+Last Edit: **4 July 2023**
 
 ***
 
@@ -293,6 +293,7 @@ Add this parameter to enable PipeWireCapture in wayland session
 > 11 [Disable Gnome Screenshot Sound when taking screenshot](#disable-gnome-screenshot-sound-when-taking-screenshot)  
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
 > 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
+> 14 [MikuMikuDance Fixes](#mikumikudance-fixes)
 
 <br>
 
@@ -444,6 +445,13 @@ type in CMD
 Use --exclude parameter
 > $ dnf update --exclude=package_name*
 
+<br>
+
+## MikuMikuDance Fixes
+1. Install All MS fonts using Winetricks + JP fonts
+2. Set ENV args before launching
+> $ LANG=ja_JP.UTF-8
+3. Garbled mess graphics is expected, so click 'view(V)', then 'seperate window(W)'
 <br>
 
 <p align="center">
