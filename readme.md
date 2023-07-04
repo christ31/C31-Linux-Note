@@ -293,7 +293,7 @@ Add this parameter to enable PipeWireCapture in wayland session
 > 11 [Disable Gnome Screenshot Sound when taking screenshot](#disable-gnome-screenshot-sound-when-taking-screenshot)  
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
 > 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
-> 14 [MikuMikuDance Fixes](#mikumikudance-fixes)
+> 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)
 
 <br>
 
@@ -447,11 +447,15 @@ Use --exclude parameter
 
 <br>
 
-## MikuMikuDance Fixes
+## MikuMikuDance (MMD) Fixes
 1. Install All MS fonts using Winetricks + JP fonts
 2. Set ENV args before launching
 > $ LANG=ja_JP.UTF-8
 3. Garbled mess graphics is expected, so click 'view(V)', then 'seperate window(W)'
+4. Install DXVK to fix Garbled Mess Graphics
+
+Issues to Fix:
+- Font shifted lower than it should
 <br>
 
 <p align="center">
