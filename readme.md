@@ -194,6 +194,7 @@ Note: Didn't work, see above ## How to install
 > 5 [Scrcpy window doesn't show up in Fedora 36 Wayland](#scrcpy-window-doesnt-show-up-in-fedora-36-wayland)  
 > 6 [(Unfixed) Wayland screen sharing on Chrome in Google Meet crash the browser](#unfixed-wayland-screen-sharing-on-chrome-in-google-meet-crash-the-browser)    
 > 7 [Deskreen Black Screen in Wayland](#deskreen-black-screen-in-wayland)
+> 8 [Drag and Drop doesn't works most of the times in Wayland](#drag-and-drop-doesnt-works-most-of-the-times-in-wayland-open-issue)
 
 <br>
 
@@ -267,6 +268,17 @@ Note: Weirdly, this doesn't happen with Chromium and Firefox
 Add this parameter to enable PipeWireCapture in wayland session
 > $ ./Deskreen-1.0.12.AppImage --enable-features=WebRTCPipeWireCapturer
 
+<br>
+
+## Drag and Drop doesn't works most of the times in Wayland (Open Issue)
+Problem: Mutter
+Link: https://gitlab.gnome.org/GNOME/mutter/-/issues/2216
+
+Temporary Solution: 
+- Keeps redraging into the area, will work about 10-20% of the time
+- Switch to Xorg 
+
+<br>
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
@@ -293,7 +305,6 @@ Add this parameter to enable PipeWireCapture in wayland session
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
 > 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
 > 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
-> 15 [Drag and Drop doesn't works most of the times in Wayland](#drag-and-drop-doesnt-works-most-of-the-times-in-wayland-open-issue)
 
 <br>
 
@@ -456,16 +467,6 @@ Use --exclude parameter
 
 Issues to Fix:
 - Font shifted lower than it should
-<br>
-
-## Drag and Drop doesn't works most of the times in Wayland (Open Issue)
-Problem: Mutter
-Link: https://gitlab.gnome.org/GNOME/mutter/-/issues/2216
-
-Temporary Solution: 
-- Keeps redraging into the area, will work about 10-20% of the time
-- Switch to Xorg 
-
 <br>
 
 <p align="center">
