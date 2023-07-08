@@ -294,6 +294,7 @@ Add this parameter to enable PipeWireCapture in wayland session
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
 > 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
 > 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)
+> 15 [Drag and Drop doesn't works most of the times in Wayland](#dnd-doesnt-works-most-of-the-times-in-wayland-open-issue)
 
 <br>
 
@@ -452,10 +453,20 @@ Use --exclude parameter
 2. Set ENV args before launching
 > $ LANG=ja_JP.UTF-8
 3. Garbled mess graphics is expected, so click 'view(V)', then 'seperate window(W)'
-4. Install DXVK to fix Garbled Mess Graphics
+4. Install DXVK (2.2) to fix Garbled Mess Graphics
 
 Issues to Fix:
 - Font shifted lower than it should
+<br>
+
+## Drag and Drop doesn't works most of the times in Wayland (Open Issue)
+Problem: Mutter
+Link: https://gitlab.gnome.org/GNOME/mutter/-/issues/2216
+
+Temporary Solution: 
+- Keeps redraging into the area, will work about 10-20% of the time
+- Switch to Xorg 
+
 <br>
 
 <p align="center">
