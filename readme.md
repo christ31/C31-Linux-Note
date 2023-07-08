@@ -17,7 +17,6 @@ Last Edit: **4 July 2023**
 > 5 [Android on Linux](#android-on-linux)    
 > 6 [Wayland Stuff](#wayland-stuff)   
 > 7 [Random Small Fix](#random-small-fix)    
-> 8 [Miscellaneous](#miscellaneous)    
 
 ***
 # Gnome Extensions Used
@@ -293,8 +292,8 @@ Add this parameter to enable PipeWireCapture in wayland session
 > 11 [Disable Gnome Screenshot Sound when taking screenshot](#disable-gnome-screenshot-sound-when-taking-screenshot)  
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
 > 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
-> 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)
-> 15 [Drag and Drop doesn't works most of the times in Wayland](#dnd-doesnt-works-most-of-the-times-in-wayland-open-issue)
+> 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
+> 15 [Drag and Drop doesn't works most of the times in Wayland](#drag-and-drop-doesnt-works-most-of-the-times-in-wayland-open-issue)
 
 <br>
 
