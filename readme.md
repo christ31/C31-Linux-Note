@@ -37,6 +37,8 @@ Last Edit: **4 July 2023**
 - https://www.markdownguide.org/basic-syntax/
 - https://www.markdownguide.org/cheat-sheet/
 - http://wiki.get-good.net/index.php?title=RFactor_Skinning
+- https://anooppoommen.medium.com/create-a-wifi-hotspot-on-linux-29349b9c582d
+- https://computingforgeeks.com/create-wi-fi-hotspot-on-linux/
 
 <br>
 
@@ -305,6 +307,8 @@ Temporary Solution:
 > 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
 > 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
 > 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
+> 15 [Setting Env Globally](#setting-env-globally)   
+> 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
 
 <br>
 
@@ -467,6 +471,27 @@ Use --exclude parameter
 
 Issues to Fix:
 - Font shifted lower than it should
+<br>
+
+## Setting ENV globally
+https://builtin.com/software-engineering-perspectives/how-to-set-environment-variables-linux
+
+### Set
+> $ export GLOBAL_VAR=VALUE
+
+### Unset
+> $ unset GLOBAL_VAR
+
+### Get current value
+> $ echo GLOBAL_VAR
+
+<br>
+
+## Nautilus on Fedora Spin KDE doesn't have SMB support
+Solution: Install gvfs-smb 
+> $ sudo dnf install gvfs-smb
+Then restart nautilus
+
 <br>
 
 <p align="center">
