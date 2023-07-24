@@ -309,7 +309,8 @@ Temporary Solution:
 > 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
 > 15 [Setting Env Globally](#setting-env-globally)   
 > 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
-> 17 [Skip install a certain package on DNF]()
+> 17 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
+> 18 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
 <br>
 
 ## Wifi keep disconnecting
@@ -498,10 +499,19 @@ Then restart nautilus
 Use -x to exclude a certain package   
 > $ dnf update -x microsoft-edge-stable    
 
->-x <package-file-spec>, --exclude=<package-file-spec>   
->      Exclude packages specified by <package-file-spec> from the operation.
+>-x \<package-file-spec>, --exclude=\<package-file-spec>   
+>     Exclude packages specified by <package-file-spec> from the operation.
 
+<br>
 
+## Remove Splash Screen on Boot in Fedora
+https://docs.fedoraproject.org/en-US/fedora/rawhide/system-administrators-guide/kernel-module-driver-configuration/Working_with_the_GRUB_2_Boot_Loader/#sec-Making_Persistent_Changes_to_a_GRUB_2_Menu_Using_the_grubby_Tool
+
+Use grubby to make persistent change.   
+
+> $ grubby --remove-args="rhgb quiet" --update-kernel /boot/vmlinuz-[YOUR_KERNEL_VERSION]   
+
+<br>
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
