@@ -309,7 +309,7 @@ Temporary Solution:
 > 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
 > 15 [Setting Env Globally](#setting-env-globally)   
 > 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
-
+> 17 [Skip install a certain package on DNF]()
 <br>
 
 ## Wifi keep disconnecting
@@ -488,11 +488,19 @@ https://builtin.com/software-engineering-perspectives/how-to-set-environment-var
 <br>
 
 ## Nautilus on Fedora Spin KDE doesn't have SMB support
-Solution: Install gvfs-smb 
-> $ sudo dnf install gvfs-smb
-Then restart nautilus
+Solution: Install gvfs-smb    
+> $ sudo dnf install gvfs-smb   
+Then restart nautilus   
 
 <br>
+
+## Skip install a certain package on DNF
+Use -x to exclude a certain package   
+> $ dnf update -x microsoft-edge-stable    
+
+>-x <package-file-spec>, --exclude=<package-file-spec>   
+>      Exclude packages specified by <package-file-spec> from the operation.
+
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
