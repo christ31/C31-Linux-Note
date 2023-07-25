@@ -371,7 +371,7 @@ Change the download location
 > $ ffmpeg -i input_filename.WebM output_filename.MP4   
 
 If there's error related to "can't be divided by 2", use crop function so the width and height is divisible by 2.   
-> ffmpeg -i input_filename.webm -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" output_filename.MP4
+> $ ffmpeg -i input_filename.webm -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" output_filename.MP4
 
 <br>
 
