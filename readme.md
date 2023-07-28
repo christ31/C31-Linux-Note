@@ -311,6 +311,7 @@ Temporary Solution:
 > 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
 > 17 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
 > 18 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
+> 19 [Adding Permanent ENV]()     
 <br>
 
 ## Wifi keep disconnecting
@@ -489,6 +490,11 @@ https://builtin.com/software-engineering-perspectives/how-to-set-environment-var
 ### Get current value
 > $ echo GLOBAL_VAR
 
+### Make Changes Permanent
+Save the command in .bashrc   
+> $ nano ./bashrc   
+> $ export GLOBAL_VAR=VALUE
+Then reboot
 <br>
 
 ## Nautilus on Fedora Spin KDE doesn't have SMB support
@@ -515,6 +521,7 @@ Use grubby to make persistent change.
 > $ grubby --remove-args="rhgb quiet" --update-kernel /boot/vmlinuz-[YOUR_KERNEL_VERSION]   
 
 <br>
+
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
