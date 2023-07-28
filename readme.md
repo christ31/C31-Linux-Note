@@ -492,7 +492,7 @@ https://builtin.com/software-engineering-perspectives/how-to-set-environment-var
 
 ### Make Changes Permanent
 Save the command in .bashrc   
-> $ nano ./bashrc   
+> $ nano .bashrc   
 > $ export GLOBAL_VAR=VALUE
 Then reboot
 <br>
