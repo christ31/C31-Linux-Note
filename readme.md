@@ -62,7 +62,8 @@ Last Edit: **4 July 2023**
 nethogs => Network Monitor   
 gt => TunnelDPI   
 nm-connection-editor => Connection Settings   
-dconf-editor => A graphical viewer and editor of applications’ internal settings   
+dconf-editor => A graphical viewer and editor of applications’ internal settings  
+intel_gpu_top => Display a top-like summary of Intel GPU usage
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
@@ -311,7 +312,7 @@ Temporary Solution:
 > 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
 > 17 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
 > 18 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
-> 19 [Adding Permanent ENV]()     
+> 19 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)     
 <br>
 
 ## Wifi keep disconnecting
@@ -521,6 +522,19 @@ Use grubby to make persistent change.
 > $ grubby --remove-args="rhgb quiet" --update-kernel /boot/vmlinuz-[YOUR_KERNEL_VERSION]   
 
 <br>
+
+## Fix sleep issue when battery is low
+Using the default settings, the sleep is triggerred when reaching 2% of battery level, which is very low. This usually make the device switch off because of lost power before the sleep proses even finished. 
+
+On my laptop, this lead to power lost, resetting UEFI to default, and power on immediately when receiving power. 
+
+> $ nano /etc/UPower/UPower.conf   
+
+Change this value   
+> PercentageLow=30   
+> PercentageCritical=25   
+> PercentageAction=20   
+
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
