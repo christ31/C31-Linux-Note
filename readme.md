@@ -312,7 +312,8 @@ Temporary Solution:
 > 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
 > 17 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
 > 18 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
-> 19 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)     
+> 19 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)    
+> 20 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)
 <br>
 
 ## Wifi keep disconnecting
@@ -535,6 +536,33 @@ Change this value
 > PercentageCritical=25   
 > PercentageAction=20   
 
+<br>
+
+## Fix resetting MySQL root password managed by systemd
+https://linuxways.net/red-hat/how-to-reset-mysql-root-password-on-red-hat-enterprise-linux-8/
+
+1. Stop MySQL
+> $ sudo systemctl stop mysqld
+2. Skip MySQL grant tables
+> $ sudo systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
+3. Start MySQL in a minimal environment
+> $ sudo systemctl start mysqld
+4. Login to MySQL
+> $ sudo mysql -u root
+5. Alter the MySQL root user
+> mysql> FLUSH PRIVILEGES;   
+> mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'NewRootPassw0rd!';   
+> mysql> FLUSH PRIVILEGES;   
+> mysql> QUIT;   
+6. Stop MySQL
+> $ sudo systemctl stop mysqld   
+7. Unset Option to skip MySQL grant tables
+> $ sudo systemctl unset-environment MYSQLD_OPTS   
+8. Start MySQL in a normal environment
+> $ sudo systemctl start mysqld   
+> $ sudo mysql -u root -p
+
+<br>
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
