@@ -3,9 +3,6 @@
 Tips, problem, and a lot of things when using Linux
 
 This file is made for Fedora 35, 36, 37, 38   
-C31
-
-Last Edit: **4 July 2023**
 
 ***
 
@@ -16,7 +13,8 @@ Last Edit: **4 July 2023**
 > 4 [Linux Battery Saver](#linux-battery-saver)   
 > 5 [Android on Linux](#android-on-linux)    
 > 6 [Wayland Stuff](#wayland-stuff)   
-> 7 [Random Small Fix](#random-small-fix)    
+> 7 [GNOME Stuff](#gnome-stuff)   
+> 8 [Random Small Fix](#random-small-fix)    
 
 ***
 # Gnome Extensions Used
@@ -287,6 +285,30 @@ Temporary Solution:
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
 </p>
 
+# Gnome Stuff
+## Disable Gnome Screenshot Sound when taking screenshot 
+https://forum.manjaro.org/t/disable-gnome-screenshot-sound/13513/2
+
+PATH: 
+/usr/share/sounds/freedesktop/stereo
+
+Just rename camera-shutter.oga to camera-shutter.bak (can be anything other than '.oga')
+
+<br>
+
+## Realme 6 cannot connect to Gnome Android Hotspot
+https://askubuntu.com/questions/1424633/unable-to-connect-with-the-hotspot-created-on-ubuntu
+
+What got things working for me was the disablement of Protected Management Frames
+
+type in CMD  
+> $ nmcli c modify Hotspot 802-11-wireless-security.pmf 1 
+
+<br>
+
+<p align="center">
+<a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
+</p>
 
 # Random Small Fix
 <p align="center">
@@ -304,16 +326,13 @@ Temporary Solution:
 > 7 [Publish New Repo on VSCode default to master](#when-using-vscode-to-publish-new-repo-to-github-it-will-default-to-master)    
 > 9 [Shared Linux Folder in Windows Guest (QEMU/KVM)](#shared-linux-folder-in-windows-guest-qemukvm)    
 > 10 [N-Key Rollover Problem in Linux](#n-key-rollover-problem-in-linux)    
-> 11 [Disable Gnome Screenshot Sound when taking screenshot](#disable-gnome-screenshot-sound-when-taking-screenshot)  
-> 12 [Realme 6 cannot connect to Gnome Android Hotspot](#realme-6-cannot-connect-to-gnome-android-hotspot)    
-> 13 [Exclude a certain package when running dnf update](#exclude-a-certain-package-when-running-dnf-update)    
-> 14 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
-> 15 [Setting Env Globally](#setting-env-globally)   
-> 16 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
-> 17 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
-> 18 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
-> 19 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)    
-> 20 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)
+> 11 [MikuMikuDance Fixes](#mikumikudance-mmd-fixes)   
+> 12 [Setting Env Globally](#setting-env-globally)   
+> 13 [Nautilus on Fedora Spin KDE doesn't have SMB support](#nautilus-on-fedora-spin-kde-doesnt-have-smb-support)      
+> 14 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
+> 15 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
+> 16 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)    
+> 17 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)
 <br>
 
 ## Wifi keep disconnecting
@@ -443,31 +462,6 @@ https://www.devever.net/~hl/usbnkro
 
 <br>
 
-## Disable Gnome Screenshot Sound when taking screenshot 
-https://forum.manjaro.org/t/disable-gnome-screenshot-sound/13513/2
-
-PATH: 
-/usr/share/sounds/freedesktop/stereo
-
-Just rename camera-shutter.oga to camera-shutter.bak (can be anything other than '.oga')
-
-<br>
-
-## Realme 6 cannot connect to Gnome Android Hotspot
-https://askubuntu.com/questions/1424633/unable-to-connect-with-the-hotspot-created-on-ubuntu
-
-What got things working for me was the disablement of Protected Management Frames
-
-type in CMD  
-> $ nmcli c modify Hotspot 802-11-wireless-security.pmf 1 
-
-<br>
-
-## Exclude a certain package when running dnf update
-Use --exclude parameter
-> $ dnf update --exclude=package_name*
-
-<br>
 
 ## MikuMikuDance (MMD) Fixes
 1. Install All MS fonts using Winetricks + JP fonts
