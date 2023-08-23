@@ -332,7 +332,8 @@ type in CMD
 > 14 [Skip install a certain package on DNF](#skip-install-a-certain-package-on-dnf)   
 > 15 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
 > 16 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)    
-> 17 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)
+> 17 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)   
+> 18 [Related to video acceleration on chromium](#related-to-video-acceleration-on-chromium)
 <br>
 
 ## Wifi keep disconnecting
@@ -557,6 +558,23 @@ https://linuxways.net/red-hat/how-to-reset-mysql-root-password-on-red-hat-enterp
 > $ sudo mysql -u root -p
 
 <br>
+
+## Related to video acceleration on Chromium
+https://discourse.ubuntu.com/t/chromium-hardware-accelerated-build-for-intel-based-platforms-available-for-beta-testing/35625
+
+A new chromium build (Snap) is made by collaboration between Canonical and Intel to get video acceleration working (Encoding and Decoding)
+
+To try this version, you will need to switch Chromium to the hwacc branch.
+
+To install hardware accelerated Chromium:
+snap install chromium --channel=latest/candidate/hwacc
+
+To switch from a previous installation:
+snap refresh chromium --channel=latest/candidate/hwacc
+
+To go back to the stable channel:
+snap refresh chromium --channel=latest/stable
+
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
