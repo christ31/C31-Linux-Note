@@ -194,7 +194,7 @@ Note: Didn't work, see above ## How to install
 > 4 [Using X11 Backend in Wayland](#using-x11-backend-in-wayland)   
 > 5 [Scrcpy window doesn't show up in Fedora 36 Wayland](#scrcpy-window-doesnt-show-up-in-fedora-36-wayland)  
 > 6 [(Unfixed) Wayland screen sharing on Chrome in Google Meet crash the browser](#unfixed-wayland-screen-sharing-on-chrome-in-google-meet-crash-the-browser)    
-> 7 [Deskreen Black Screen in Wayland](#deskreen-black-screen-in-wayland)
+> 7 [Deskreen Black Screen in Wayland](#deskreen-black-screen-in-wayland)   
 > 8 [Drag and Drop doesn't works most of the times in Wayland](#drag-and-drop-doesnt-works-most-of-the-times-in-wayland-open-issue)
 
 <br>
@@ -305,6 +305,16 @@ type in CMD
 > $ nmcli c modify Hotspot 802-11-wireless-security.pmf 1 
 
 <br>
+
+## Remove apps shortcut on Gnome App Grid 
+https://www.cyberciti.biz/howto/how-to-install-and-edit-desktop-files-on-linux-desktop-entries/
+
+Delete the .desktop file on the following path
+| Description | Location |
+| --- | --- |
+| Default Linux distro specific applications | /usr/share/applications/ |
+| Third party specific applications | /usr/local/share/applications/ |
+| User specific applications | ~/.local/share/applications/ |
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
