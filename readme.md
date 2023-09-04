@@ -343,7 +343,8 @@ Delete the .desktop file on the following path
 > 15 [Remove Splash Screen on Boot in Fedora](#remove-splash-screen-on-boot-in-fedora)     
 > 16 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)    
 > 17 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)   
-> 18 [Related to video acceleration on chromium](#related-to-video-acceleration-on-chromium)
+> 18 [Related to video acceleration on chromium](#related-to-video-acceleration-on-chromium)   
+> 19 [Flatpak keep updating old 32-bit nvidia driver package (org.freedesktop.Platform.GL32.nvidia-*)](#flatpak-keep-updating-old-32-bit-nvidia-driver-package-orgfreedesktopplatformgl32nvidia)
 <br>
 
 ## Wifi keep disconnecting
@@ -585,6 +586,16 @@ snap refresh chromium --channel=latest/candidate/hwacc
 To go back to the stable channel:
 snap refresh chromium --channel=latest/stable
 
+<br>
+
+## Flatpak keep updating old 32-bit nvidia driver package (org.freedesktop.Platform.GL32.nvidia-*)
+https://github.com/flatpak/flatpak/issues/2718
+
+> \$ flatpak list --runtime   
+> \$ flatpak remove [insert-unused-nvidia-driver]   
+> \$ flatpak update
+
+When uninstalling, heroic game launcher and bottles seems the one that keep the old drivers (only 32-bit NV driver).
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
