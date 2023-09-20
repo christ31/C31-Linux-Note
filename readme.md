@@ -527,6 +527,8 @@ https://docs.fedoraproject.org/en-US/fedora/rawhide/system-administrators-guide/
 Use grubby to make persistent change.   
 
 > $ grubby --remove-args="rhgb quiet" --update-kernel /boot/vmlinuz-[YOUR_KERNEL_VERSION]   
+or   
+> $ grubby --remove-args="rhgb quiet" --update-kernel DEFAULT
 
 <br>
 
