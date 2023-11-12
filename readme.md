@@ -2,7 +2,7 @@
 # About this repo
 Tips, problem, and a lot of things when using Linux
 
-This file is made for Fedora 35, 36, 37, 38   
+This file is made for Fedora 35, 36, 37, 38, 39   
 
 ***
 
@@ -344,7 +344,9 @@ Delete the .desktop file on the following path
 > 16 [Fix sleep issue when battery is low](#fix-sleep-issue-when-battery-is-low)    
 > 17 [Fix resetting MySQL root password managed by systemd](#fix-resetting-mysql-root-password-managed-by-systemd)   
 > 18 [Related to video acceleration on chromium](#related-to-video-acceleration-on-chromium)   
-> 19 [Flatpak keep updating old 32-bit nvidia driver package (org.freedesktop.Platform.GL32.nvidia-*)](#flatpak-keep-updating-old-32-bit-nvidia-driver-package-orgfreedesktopplatformgl32nvidia)
+> 19 [Flatpak keep updating old 32-bit nvidia driver package (org.freedesktop.Platform.GL32.nvidia-*)](#flatpak-keep-updating-old-32-bit-nvidia-driver-package-orgfreedesktopplatformgl32nvidia)   
+> 20 [System keep constantly stutter because wifi module restarting](#system-keep-constantly-stutter-because-wifi-module-restarting)   
+> 21 [Monitor SSD NVME Percentage Usage](#monitor-ssd-nvme-percentage-usage)
 <br>
 
 ## Wifi keep disconnecting
@@ -598,6 +600,37 @@ https://github.com/flatpak/flatpak/issues/2718
 > \$ flatpak update
 
 When uninstalling, heroic game launcher and bottles seems the one that keep the old drivers (only 32-bit NV driver).
+
+<br>
+
+## System keep constantly stutter because wifi module restarting
+https://bbs.archlinux.org/viewtopic.php?id=254766
+
+Event:    
+![Alt text](image.png)
+Looking at the Logs provided above, ieee80211 phy0 was requested to restart due to iwlwifi (Microcode SW error detected)
+
+![Alt text](image-1.png)
+
+Using lspci, my network adapter is using
+02:00.0 Network controller: Intel Corporation Wireless 7265 (rev 59)
+
+https://www.intel.com/content/www/us/en/support/articles/000005511/wireless.html
+Going into intel official website for driver, the intended driver is iwlwifi-7265-ucode-25.30.14.0.tgz
+
+Currently, mine using 
+iwlwifi 0000:02:00.0: Loaded firmware version: 29.4063824552.0 7265D-29.ucode
+
+<br>
+
+## Find the library in the RPM Repo
+dnf whatprovides *liblttng-ust.so
+
+
+## Monitor SSD NVME Percentage Usage
+> $ sudo watch -n 1 nvme smart-log /dev/nvme0n1p6   
+
+
 
 <p align="center">
 <a align="center" href="#about-this-repo">🔼 Back to top 🔼</a>
