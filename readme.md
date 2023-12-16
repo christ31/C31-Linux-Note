@@ -25,7 +25,8 @@ This file is made for Fedora 35, 36, 37, 38, 39
 - Desktop Clock | [GitLab](https://gitlab.com/AndrewZaech/azclock)
 - Gnome 4x UI Improvements [GitHub](https://github.com/axxapy/gnome-ui-tune)
 - gTile | [GitHub](https://github.com/gTile/gTile)
-- Internet Speed Monitor | [GitHub](https://github.com/rishuinfinity/InternetSpeedMonitor)
+- Internet Speed Monitor | [GitHub](https://github.com/rishuinfinity/InternetSpeedMonitor)    
+- Rounded Window Corner | [GitHub](https://github.com/yilozt/rounded-window-corners)    
 
 <br>
 
